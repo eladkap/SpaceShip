@@ -22,6 +22,12 @@ const FRAME_WIDTH = window.innerWidth * 1;
 const FRAME_HEIGHT = window.innerHeight * 1;
 const FRAME_BORDER_WEIGHT = 0;
 
+/* Stats */
+const STATS_POS_X = window.innerWidth * 0.3;
+const STATS_POS_Y = 50;
+const LIFEBAR_WIDTH = 200;
+const LIFEBAR_HEIGHT = 25;
+
 /* SHIP */
 const SHIP_RADIUS = 20;
 const SHIP_ACC = 0.2;
@@ -39,6 +45,9 @@ const BUBBLE_MAX_RADIUS = 16;
 const BUBBLE_MIN_SPEED = 1;
 const BUBBLE_MAX_SPEED = 3;
 const BUBBLE_RADIUS_OPTIONS = [4, 8, 16, 32];
+
+/* Enemies */
+const ENEMIES = 10;
 
 /* Bullets */
 const BULLET_SPEED = 10;

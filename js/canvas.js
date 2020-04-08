@@ -12,6 +12,7 @@ var soundFire1;
 var ship;
 var bubbles;
 var frame;
+var stats;
 var ship;
 var bullets;
 var timeProgressBar;
@@ -36,6 +37,10 @@ function KeyDown(event) {
   }
   if (event.key == " ") {
     ship.FireBullet(ANGLE_OFFSET);
+  }
+  if (event.key == "d") {
+    console.log("Damage");
+    stats.DecreaseLife(5);
   }
 }
 
@@ -78,6 +83,10 @@ function CreateFrame() {
   );
 }
 
+function CreateStats() {
+  stats = new Stats(STATS_POS_X, STATS_POS_Y, ENEMIES);
+}
+
 function CreateShip() {
   ship = new Ship(canvas.width / 2, canvas.height / 2, SHIP_RADIUS);
 }
@@ -96,6 +105,10 @@ function DrawBubbles() {
 
 function DrawFrame() {
   frame.Draw();
+}
+
+function DrawStats() {
+  stats.Draw();
 }
 
 function DrawShip() {
@@ -138,6 +151,7 @@ function CheckBulletBubbleCollision() {
 function Setup() {
   LoadSounds();
   CreateFrame();
+  CreateStats();
   CreateShip();
   CreateBubbles();
   CreateBullets();
@@ -147,6 +161,7 @@ function Draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   requestAnimationFrame(Draw);
   DrawFrame();
+  DrawStats();
   DrawShip();
   DrawBubbles();
   DrawBullets();
